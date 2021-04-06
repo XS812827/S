@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-model="nations.nums" type="" name="" id="" value="" />
+			<p v-if="nations.nums==nations[0].num">你输入的是国家代码是+{{nations[0].num}}，它表示{{nations[0].name}}。</p>
+			<p v-if="nations.nums==nations[1].num">你输入的是国家代码是+{{nations[1].num}}，它表示{{nations[1].name}}。</p>
+			
+		
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					nations:[
+						{name:'中国',num:'86'},
+						{name:'英国',num:'44'},
+					]
+				}
+			})	
+		</script>
+	</body>
+</html>
