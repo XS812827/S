@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="800"></canvas>
+		<div id="app">
+			<input type="text" @keyup.enter="show()" name="" id="myText" value="" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					show(){
+						let canvas=document.getElementById("myCanvas");
+						let context=canvas.getContext("2d");
+						let img1=new Image();
+						let img2=new Image();
+						let myText=document.getElementById("myText").value
+						alert(myText)
+						if(myText=="China" ){
+							img1.src="./img/China.jpg";
+								
+						}
+						else if(myText=="America"){
+							img2.src="./img/America.jpg";
+						}
+						img1.onload=function(){
+							context.drawImage(img1,0,0)
+						}
+						img2.onload=function(){
+							context.drawImage(img2,0,440)
+						}
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
